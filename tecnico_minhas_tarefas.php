@@ -19,6 +19,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_perfil'] !== 'tecnico') {
         <div class="container">
             <a class="navbar-brand fw-bold" href="#"><i class="bi bi-tools me-2"></i> SGM TÉCNICO</a>
             <div class="navbar-nav ms-auto align-items-center">
+                <a class="nav-link text-white small me-3 active" href="tecnico_minhas_tarefas.php"><i class="bi bi-calendar-check me-1"></i> Minha Agenda</a>
+                <a class="nav-link text-white small me-3" href="tecnico_historico.php"><i class="bi bi-archive me-1"></i> Meu Histórico</a>
                 <span class="nav-link text-white small me-3"><?= $_SESSION['user_nome'] ?></span>
                 <a class="btn btn-sm btn-outline-light border-0" href="api/logout.php"><i class="bi bi-box-arrow-right"></i> Sair</a>
             </div>

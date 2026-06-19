@@ -30,6 +30,8 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_perfil'] !== 'gestor') {
                     <li class="nav-item"><a class="nav-link" href="gestor_chamados.php">Chamados</a></li>
                     <li class="nav-item"><a class="nav-link" href="gestor_locais.php">Locais</a></li>
                     <li class="nav-item"><a class="nav-link" href="gestor_servicos.php">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gestor_usuario.php">Usuários</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gestor_relatorios.php">Relatórios</a></li>
                     <li class="nav-item ms-lg-3">
                         <div class="d-flex align-items-center bg-dark p-1 px-3 rounded-pill text-white">
                             <i class="bi bi-person-circle me-2"></i>
@@ -132,6 +134,15 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_perfil'] !== 'gestor') {
                                 <div>
                                     <div class="fw-bold">Equipe Técnica</div>
                                     <small class="text-muted">Gerenciar Usuários</small>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-12">
+                            <a href="gestor_relatorios.php" class="btn btn-light w-100 text-start p-3 border shadow-sm" style="border-left: 5px solid var(--danger) !important;">
+                                <i class="bi bi-bar-chart-line text-danger me-2 fs-5"></i>
+                                <div>
+                                    <div class="fw-bold">Relatórios Operacionais</div>
+                                    <small class="text-muted">Indicadores de performance, MTTR, volumetria e dados analíticos</small>
                                 </div>
                             </a>
                         </div>

@@ -63,18 +63,25 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_perfil'] !== 'solicitante') 
 
             container.innerHTML = chamados.map(c => `
                 <div class="col-md-6 col-lg-4">
-                    <div class="glass-card p-4 h-100 border-top border-4 border-${obterCorStatus(c.status)}">
-                        <div class="d-flex justify-content-between mb-3">
-                            <span class="badge ${obterBadgeClass(c.status)}">${c.status.replace('_', ' ').toUpperCase()}</span>
-                            <small class="text-muted">#${c.id_chamado}</small>
+                    <div class="glass-card p-4 h-100 border-top border-4 border-${obterCorStatus(c.status)} d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge ${obterBadgeClass(c.status)}">${c.status.replace('_', ' ').toUpperCase()}</span>
+                                <small class="text-muted">#${c.id_chamado}</small>
+                            </div>
+                            <h6 class="fw-bold mb-1">${c.ambiente_nome}</h6>
+                            <p class="text-muted small mb-3">${c.bloco_nome}</p>
+                            <p class="text-truncate small mb-3">${c.descricao_problema}</p>
                         </div>
-                        <h6 class="fw-bold mb-1">${c.ambiente_nome}</h6>
-                        <p class="text-muted small mb-3">${c.bloco_nome}</p>
-                        <p class="text-truncate small">${c.descricao_problema}</p>
-                        <hr>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <small class="text-muted"><i class="bi bi-calendar-check me-1"></i> ${new Date(c.data_abertura).toLocaleDateString()}</small>
-                            <span class="small fw-bold ${obterCorPrioridade(c.prioridade)} text-uppercase">${c.prioridade}</span>
+                        <div>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <small class="text-muted"><i class="bi bi-calendar-check me-1"></i> ${new Date(c.data_abertura).toLocaleDateString()}</small>
+                                <span class="small fw-bold ${obterCorPrioridade(c.prioridade)} text-uppercase">${c.prioridade}</span>
+                            </div>
+                            <a href="solicitante_visualizar.php?id=${c.id_chamado}" class="btn btn-sm btn-primary w-100 rounded-pill py-2">
+                                <i class="bi bi-eye me-1"></i> Acompanhar Chamado
+                            </a>
                         </div>
                     </div>
                 </div>

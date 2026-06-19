@@ -16,16 +16,30 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_perfil'] !== 'gestor') {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark mb-4">
+    <nav class="navbar navbar-expand-lg navbar-dark mb-4 shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="gestor_dashboard.php">
                 <i class="bi bi-tools me-2"></i> SGM ADMIN
             </a>
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link active" href="gestor_chamados.php">Chamados</a>
-                <a class="nav-link" href="gestor_locais.php">Locais</a>
-                <a class="nav-link" href="gestor_servicos.php">Serviços</a>
-                <a class="nav-link text-danger" href="api/logout.php"><i class="bi bi-box-arrow-right"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="gestor_dashboard.php">Início</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="gestor_chamados.php">Chamados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gestor_locais.php">Locais</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gestor_servicos.php">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gestor_usuario.php">Usuários</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gestor_relatorios.php">Relatórios</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <div class="d-flex align-items-center bg-dark p-1 px-3 rounded-pill text-white">
+                            <i class="bi bi-person-circle me-2"></i>
+                            <span class="small me-3"><?= $_SESSION['user_nome'] ?></span>
+                            <a href="api/logout.php" class="text-danger"><i class="bi bi-box-arrow-right"></i></a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>

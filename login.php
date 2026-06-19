@@ -12,7 +12,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000') no-repeat center center fixed;
+            background: url('assets/img/login_bg.png') no-repeat center center fixed;
             background-size: cover;
         }
         body::after {
